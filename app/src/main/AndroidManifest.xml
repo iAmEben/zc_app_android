@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tolstoy.zurichat">
 
@@ -6,7 +7,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
@@ -17,13 +17,28 @@
         android:roundIcon="@drawable/splash_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZuriChat">
+
+        <provider
+            android:authorities="com.tolstoy.zurichat.ui.activities.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fileprovider" />
+        </provider>
+
+        <activity
+            android:name=".ui.activities.AccessCameraActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
         <activity
             android:name=".ui.activities.CreateOrganizationActivity"
             android:exported="true" />
         <activity
             android:name=".ui.activities.DocumentOtions"
             android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.Light"></activity>
+            android:theme="@style/Theme.MaterialComponents.Light" />
         <activity
             android:name=".ui.activities.SplashActivity"
             android:exported="true"
@@ -80,7 +95,7 @@
             android:exported="true"
             android:label="@string/title_activity_settings"
             android:parentActivityName=".ui.activities.MainActivity"
-            android:theme="@style/Theme.ZuriChat.Settings"></activity>
+            android:theme="@style/Theme.ZuriChat.Settings" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
@@ -91,7 +106,7 @@
             android:label="@string/profile_activity"
             android:parentActivityName=".ui.settings.ManageStorageActivity"
             android:theme="@style/Theme.ZuriChat.Settings" />
-        <activity android:name=".ui.activities.MainActivity"></activity>
+        <activity android:name=".ui.activities.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
