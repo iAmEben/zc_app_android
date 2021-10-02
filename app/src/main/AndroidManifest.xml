@@ -18,11 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZuriChat">
 
-
-        <activity
-            android:name=".ui.activities.AccessCameraActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
         <activity
             android:name=".ui.activities.CreateOrganizationActivity"
             android:exported="true" />
