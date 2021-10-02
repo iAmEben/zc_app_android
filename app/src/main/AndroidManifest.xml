@@ -18,15 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZuriChat">
 
-        <provider
-            android:authorities="com.tolstoy.zurichat.ui.activities.fileprovider"
-            android:name="androidx.core.content.FileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/fileprovider" />
-        </provider>
 
         <activity
             android:name=".ui.activities.AccessCameraActivity"
@@ -53,10 +44,6 @@
             android:name=".ui.activities.DocumentsSelectedActivity"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.Light" />
-        <activity
-            android:name=".ui.activities.OpenCameraActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".ui.activities.DocumentSentActivity"
             android:exported="true"

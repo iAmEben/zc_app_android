@@ -14,9 +14,6 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/image_channel"
         app:menu="@menu/dm_chat"
         app:navigationIcon="@drawable/ic_back"
@@ -24,9 +21,9 @@
         app:subtitle="online"
         app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Small"
         app:subtitleTextColor="@color/white"
-        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:title="John Doe Felix"
         app:titleMarginStart="32dp"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:titleTextColor="@android:color/white" />
 
     <View
@@ -35,25 +32,16 @@
         android:layout_height="0dp"
         android:alpha="0.0"
         android:background="#000000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_dm" />
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_dm"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="match_parent"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@id/channel_typing_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_dm"
-        app:layout_constraintVertical_bias="1.0"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedHeight="true"
         tools:itemCount="2"
+        tools:layout_editor_absoluteY="56dp"
         tools:listitem="@layout/channel_incoming_message_model">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -63,20 +51,21 @@
         layout="@layout/partial_message_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/camera_ImgV"
+        android:layout_width="207dp"
+        android:layout_height="232dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@id/channel_typing_bar"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/channel_typing_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        tools:layout_editor_absoluteY="674dp">
         <!-- region Emoji Message Pictures & Attachments-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView"
